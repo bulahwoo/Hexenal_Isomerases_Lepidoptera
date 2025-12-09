@@ -1,10 +1,12 @@
 
-## Hexenal Isomerases Lepidoptera
+# Hexenal Isomerases Lepidoptera
 
 Scripts used in homolog identification and phylogenetic analysis of
 hexenal isomerases in Lepidoptera
 
-### 1. Identifying potential homologs with GMC_oxred_N and GMC_oxred_C motifs in 33 speices (1 dipteran, 4 trichopteran and 28 lepidopteran species)
+ 
+
+## 1. Identifying potential homologs with GMC_oxred_N and GMC_oxred_C motifs in 33 speices (1 dipteran, 4 trichopteran and 28 lepidopteran species)
 
     # prepare an HMM database for hmmscan
     cat GMC_oxred_C.hmm GMC_oxred_N.hmm > nc.hmm
@@ -55,7 +57,9 @@ hexenal isomerases in Lepidoptera
     # remove 14 fruit fly sequences
     cat og_cut_uniq_asmid_aaid.fa | paste - - | grep -Ev '>FBpp' | sed -r 's/\t/\n/g' > og_nofly_cut_uniq_asmid_aaid.fa
 
-### 2. Identifying potential homologs with GMC_oxred_N and GMC_oxred_C motifs in 5 non-ditrysia speices
+ 
+
+## 2. Identifying potential homologs with GMC_oxred_N and GMC_oxred_C motifs in non-ditrysia speices
 
     # hmmscan search
     while read ID; do
@@ -91,7 +95,9 @@ hexenal isomerases in Lepidoptera
     cat <(cat asmid_aaid.fa | paste - - | sort -t $'\t' -k2,2V | uniq -f 1 -u) <(cat asmid_aaid.fa | paste - - | sort -t $'\t' -k2,2V | uniq -f 1 -D | sort -t $'\t' -k2,2V -u) | sed -r 's/\t/\n/g' > uniq_asmid_aaid.fa
     cat <(cat cut_asmid_aaid.fa | paste - - | sort -t $'\t' -k2,2V | uniq -f 1 -u) <(cat cut_asmid_aaid.fa | paste - - | sort -t $'\t' -k2,2V | uniq -f 1 -D | sort -t $'\t' -k2,2V -u) | sed -r 's/\t/\n/g' > uniq_cut_asmid_aaid.fa
 
-### 3. Protein alignment, model selection, and tree building
+ 
+
+## 3. Protein alignment, model selection, and tree building
 
     # concatenate all candidates
     cat og_cut_uniq_asmid_aaid_1185.fa non_ditrysia_uniq_cut_asmid_aaid.fa | paste - - | grep -Ev '^>GEOR01' | sed -r 's/\t/\n/g' > og_cut_uniq_asmid_aaid_1251.fa
