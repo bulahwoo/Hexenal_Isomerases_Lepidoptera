@@ -6,7 +6,7 @@ hexenal isomerases in Lepidoptera
 
  
 
-## 1. Identifying potential homologs with GMC_oxred_N and GMC_oxred_C motifs in 33 speices (1 dipteran, 4 trichopteran and 28 lepidopteran species)
+## 1. Identification of potential homologs containing the GMC_oxred_N and GMC_oxred_C motifs in species with annotated genomes (including 1 dipteran, 3 trichopterans, and 29 lepidopterans)
 
     # prepare an HMM database for hmmscan
     cat GMC_oxred_C.hmm GMC_oxred_N.hmm > nc.hmm
@@ -59,7 +59,7 @@ hexenal isomerases in Lepidoptera
 
  
 
-## 2. Identifying potential homologs with GMC_oxred_N and GMC_oxred_C motifs in non-ditrysia speices
+## 2. Identification of potential homologs containing the GMC_oxred_N and GMC_oxred_C motifs in species with transcriptome assemblies (5 lepidopterans)
 
     # hmmscan search
     while read ID; do
